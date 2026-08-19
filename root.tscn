@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://mefxfeyjngkx"]
+
+[ext_resource type="Script" uid="uid://da06d5ucmhgbb" path="res://root.gd" id="1_vvh5c"]
+[ext_resource type="Script" uid="uid://ck7ubb8orktpq" path="res://camera_2d.gd" id="2_28aoi"]
+[ext_resource type="Texture2D" uid="uid://dcb51san8yhnj" path="res://icon.svg" id="3_jnlp7"]
+[ext_resource type="Texture2D" uid="uid://dnoygi2b800pe" path="res://hero.png" id="4_28aoi"]
+[ext_resource type="Script" uid="uid://do81ka2qk1csd" path="res://hero.gd" id="5_jnlp7"]
+[ext_resource type="Script" uid="uid://bevdnfwtwbhkf" path="res://field.gd" id="6_l8v81"]
+
+[node name="Root" type="Node2D" unique_id=2077907471]
+script = ExtResource("1_vvh5c")
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=1718223480]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2006849182]
+script = ExtResource("2_28aoi")
+
+[node name="Field" type="Node2D" parent="." unique_id=1475453149]
+script = ExtResource("6_l8v81")
+cell_texture = ExtResource("3_jnlp7")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=807500316]
+position = Vector2(119, -141.00002)
+scale = Vector2(1, 0.99999994)
+skew = 0.26179934
+texture = ExtResource("3_jnlp7")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1236843576]
+position = Vector2(183.00002, -77.00006)
+rotation = 4.712389
+skew = -1.3089969
+texture = ExtResource("3_jnlp7")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=1594683650]
+position = Vector2(105, -19)
+texture = ExtResource("3_jnlp7")
+
+[node name="Hero" type="Sprite2D" parent="." unique_id=2053782017]
+z_index = 1
+scale = Vector2(0.37999997, 0.38)
+texture = ExtResource("4_28aoi")
+offset = Vector2(-2.6315691, -73.68421)
+script = ExtResource("5_jnlp7")
