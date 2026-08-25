@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 @onready var animation_player = $AnimationPlayer
 
-const SPEED = 292
+const SPEED = 240
 const JUMP_VELOCITY = -400.0
 
-const WALK_ANIMATION_BASIC_SPEED = 73.0
+const WALK_ANIMATION_BASIC_SPEED = 80
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	if velocity.x:
-		animation_player.play("walk_test5", 1)
+		animation_player.play("walk", 1)
 		animation_player.speed_scale = abs(velocity.x/WALK_ANIMATION_BASIC_SPEED)
 	else:
 		animation_player.play("RESET", 1)
