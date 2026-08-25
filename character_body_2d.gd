@@ -30,6 +30,11 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("walk", 1)
 		animation_player.speed_scale = abs(velocity.x/WALK_ANIMATION_BASIC_SPEED)
 	else:
-		animation_player.play("RESET", 1)
+		if animation_player.current_animation != "idle_1":
+			animation_player.speed_scale = 1
+			animation_player.play("rest", 1)
+
+	if randi_range(1, 1000) == 1:
+		animation_player.play("idle_1", 1)
 
 	move_and_slide()

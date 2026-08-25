@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bevdnfwtwbhkf" path="res://field.gd" id="6_l8v81"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
-size = Vector2(550, 24)
+size = Vector2(1900, 13)
 
 [node name="Root" type="Node2D" unique_id=2077907471]
 script = ExtResource("1_vvh5c")
@@ -19,6 +19,7 @@ script = ExtResource("1_vvh5c")
 script = ExtResource("2_28aoi")
 
 [node name="Field" type="Node2D" parent="." unique_id=1475453149]
+position = Vector2(-2, 215)
 script = ExtResource("6_l8v81")
 cell_texture = ExtResource("3_jnlp7")
 
@@ -49,7 +50,8 @@ script = ExtResource("5_jnlp7")
 position = Vector2(7, -704)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=972418200]
+position = Vector2(-2, 215)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1650994356]
-position = Vector2(-1, 14)
+position = Vector2(9, 8.5)
 shape = SubResource("RectangleShape2D_4kxuq")
