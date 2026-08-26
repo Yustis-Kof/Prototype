@@ -26,15 +26,26 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	if velocity.x:
+	animation_player.speed_scale = 1
+	
+	if velocity.y < 0:
+		start_animation("lift", 0.2)
+	elif velocity.y > 0:
+		start_animation("fall", 0.5)
+	elif velocity.x:
 		animation_player.play("walk", 1)
 		animation_player.speed_scale = abs(velocity.x/WALK_ANIMATION_BASIC_SPEED)
 	else:
-		if animation_player.current_animation != "idle_1":
-			animation_player.speed_scale = 1
-			animation_player.play("rest", 1)
-
+		start_animation("rest", 0.5)
+		
+	if Input.is_action_just_pressed("ui_down"):
+		start_animation("rest", 1)
+	
 	if randi_range(1, 1000) == 1:
 		animation_player.play("idle_1", 1)
 
 	move_and_slide()
+
+func start_animation(animation : String, blend_time : float = -1):
+	if animation_player.current_animation != animation:
+		animation_player.play(animation, blend_time)
