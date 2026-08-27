@@ -7,6 +7,9 @@ const JUMP_VELOCITY = -400.0
 
 const WALK_ANIMATION_BASIC_SPEED = 80
 
+@onready var flip_timer = $FlipTimer
+@onready var skeleton_modification_stack = $Rig/Skeleton2D.get_modification_stack()
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -21,7 +24,11 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		if $Rig.scale.x != abs($Rig.scale.x) * direction:
+			#skeleton_modification_stack.get_modification(11).enabled = false
+			#skeleton_modification_stack.get_modification(12).enabled = false
 			$Rig.scale.x = abs($Rig.scale.x) * direction
+			
+			#flip_timer.start(0.1)
 			print(direction)
 		velocity.x = direction * SPEED
 	else:
@@ -50,3 +57,9 @@ func _physics_process(delta: float) -> void:
 func start_animation(animation : String, blend_time : float = -1):
 	if animation_player.current_animation != animation:
 		animation_player.play(animation, blend_time)
+
+
+func _on_flip_timer_timeout() -> void:
+	pass
+	#skeleton_modification_stack.get_modification(11).enabled = true
+	#skeleton_modification_stack.get_modification(12).enabled = true
