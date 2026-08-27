@@ -37,7 +37,10 @@ func _physics_process(delta: float) -> void:
 	animation_player.speed_scale = 1
 	
 	if velocity.y < 0:
-		start_animation("lift", 0.2)
+		if velocity.x > 0:
+			start_animation("lift_forward", 0.1)
+		else:
+			start_animation("lift", 0.1)
 	elif velocity.y > 0:
 		start_animation("fall", 0.5)
 	elif velocity.x:
