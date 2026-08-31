@@ -10,15 +10,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
 size = Vector2(1900, 13)
 
-[sub_resource type="Theme" id="Theme_4kxuq"]
-Label/font_sizes/font_size = 26
-
 [node name="Root" type="Node2D" unique_id=2077907471]
 script = ExtResource("1_vvh5c")
 
 [node name="Canvas" type="CanvasLayer" parent="." unique_id=1718223480]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2006849182]
+zoom = Vector2(1.1, 1.1)
 script = ExtResource("2_28aoi")
 
 [node name="Field" type="Node2D" parent="." unique_id=1475453149]
@@ -58,27 +56,3 @@ position = Vector2(-2, 215)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1650994356]
 position = Vector2(9, 8.5)
 shape = SubResource("RectangleShape2D_4kxuq")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=840545819]
-offset_left = -722.0
-offset_top = -347.0
-offset_right = -166.0
-offset_bottom = -52.0
-color = Color(1, 0.77254903, 0.3019608, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=861344308]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 4.0
-offset_right = 448.0
-offset_bottom = 273.0
-theme = SubResource("Theme_4kxuq")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Сделать:
-- Покачивание волос спереди и сзади
-- Бег
-- Присяд
-- Сгибание ног при поднятии
-- Лицевую анимацию
-- 3д бэкграунд сцене"
-fit_content = true
