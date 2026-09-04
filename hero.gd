@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var current_cell : Sprite2D
+@export var current_cell : Cell
 @onready var field = $"../Field"
 
 var hor_speed = 5
