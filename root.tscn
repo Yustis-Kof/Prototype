@@ -170,47 +170,49 @@ text = "Сделать:
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
-[node name="UI" type="Control" parent="." unique_id=84583303 node_paths=PackedStringArray("FightTitle", "TurnTitle", "StartButton", "EndTurnButton")]
-physics_interpolation_mode = 0
-layout_mode = 3
-anchors_preset = 0
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2006849182]
+material = SubResource("ShaderMaterial_gd4vy")
+script = ExtResource("2_28aoi")
+
+[node name="UI" type="Node2D" parent="Camera2D" unique_id=752149768 node_paths=PackedStringArray("FightTitle", "TurnTitle", "StartButton", "EndTurnButton", "DeckContainer")]
+physics_interpolation_mode = 2
 script = ExtResource("9_huihk")
 FightTitle = NodePath("FightTitle")
 TurnTitle = NodePath("TurnTitle")
 StartButton = NodePath("StartButton")
 EndTurnButton = NodePath("EndTurnButton")
+DeckContainer = NodePath("DeckContainer")
 metadata/_custom_type_script = "uid://bk467rerjboq6"
 
-[node name="StartButton" type="Button" parent="UI" unique_id=328785145]
-layout_mode = 0
-offset_left = -702.0
-offset_top = -136.0
-offset_right = -565.0
-offset_bottom = -105.0
+[node name="StartButton" type="Button" parent="Camera2D/UI" unique_id=328785145]
+offset_left = -948.0
+offset_top = 474.0
+offset_right = -766.0
+offset_bottom = 526.0
 text = "Начать битво!!!!"
 
-[node name="EndTurnButton" type="Button" parent="UI" unique_id=195293155]
-layout_mode = 0
-offset_left = 446.0
-offset_top = -75.0
-offset_right = 574.0
-offset_bottom = -44.0
+[node name="EndTurnButton" type="Button" parent="Camera2D/UI" unique_id=195293155]
+offset_left = 760.0
+offset_top = 477.0
+offset_right = 946.0
+offset_bottom = 529.0
 text = "Закончить ход"
 
-[node name="TurnTitle" type="Label" parent="UI" unique_id=2064752337]
-layout_mode = 0
+[node name="TurnTitle" type="Label" parent="Camera2D/UI" unique_id=2064752337]
 offset_left = -17.0
 offset_top = -522.0
 offset_right = 23.0
 offset_bottom = -499.0
 
-[node name="FightTitle" type="Label" parent="UI" unique_id=1843871411]
-layout_mode = 0
+[node name="FightTitle" type="Label" parent="Camera2D/UI" unique_id=1843871411]
 offset_left = -25.0
 offset_top = -136.0
 offset_right = 25.0
 offset_bottom = -113.0
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2006849182]
-material = SubResource("ShaderMaterial_gd4vy")
-script = ExtResource("2_28aoi")
+[node name="DeckContainer" type="BoxContainer" parent="Camera2D/UI" unique_id=962338504]
+offset_left = 587.0
+offset_top = -358.0
+offset_right = 941.0
+offset_bottom = 184.0
+vertical = true

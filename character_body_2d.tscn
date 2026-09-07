@@ -9821,13 +9821,13 @@ bone_angle = 0.0
 [node name="ThighLeft" type="Bone2D" parent="Rig/Skeleton2D/Body" unique_id=1537738237]
 position = Vector2(22, 145.99817)
 rotation = -0.007254944
-scale = Vector2(0.99989396, 0.99989396)
+scale = Vector2(0.9998939, 0.9998939)
 rest = Transform2D(0.9998689, -0.0072541204, 0.0072541204, 0.9998689, 22, 145.99817)
 
 [node name="LegLeft" type="Bone2D" parent="Rig/Skeleton2D/Body/ThighLeft" unique_id=1423402584]
 position = Vector2(-2.9989586, 125.04245)
 rotation = 0.01628859
-scale = Vector2(0.9999148, 0.9999148)
+scale = Vector2(0.99991477, 0.99991477)
 rest = Transform2D(0.99978346, 0.016286504, -0.016286504, 0.99978346, -2.9989586, 125.04245)
 
 [node name="FootLeft" type="Bone2D" parent="Rig/Skeleton2D/Body/ThighLeft/LegLeft" unique_id=806257966]

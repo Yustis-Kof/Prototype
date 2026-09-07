@@ -12,6 +12,8 @@ extends Node2D
 var x : int
 var y : int
 
+signal movement_ended
+
 func _ready() -> void:
 	pass
 
@@ -31,3 +33,5 @@ func _process(delta: float) -> void:
 	if current_cell:
 		position.x += (current_cell.global_position.x - position.x)/2
 		position.y += (current_cell.global_position.y - position.y)/2
+		if abs(position - current_cell.global_position) < Vector2.ONE:
+			movement_ended.emit()

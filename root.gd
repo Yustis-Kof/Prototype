@@ -13,5 +13,6 @@ func _ready() -> void:
 	smth.set_sprite(sprite, 0.38, Vector2(0, -114))
 	spawn(smth, 0, 0)
 
-	ui = $UI
+	ui = $Camera2D/UI
 	connect_ui()
+	connect_field()
