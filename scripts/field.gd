@@ -14,18 +14,26 @@ var current_animation_speed = ANIMATION_SPEED
 var canvas_instance : RID
 var count = 0
 
+signal cell_clicked(cell : Cell)
+
 func _ready() -> void:
 	var tex_width : float = cell_texture.get_width()
 	var tex_height : float = cell_texture.get_height()
 	for i in range(WIDTH):
 		for j in range(HEIGHT):
 			var cell = Cell.new()
+			cell.field = self
+			cell.x = i
+			cell.y = j
 			cell.texture = cell_texture
 			cell.transform = Transform2D(0,
 										Vector2(CELL_WIDTH/tex_width, CELL_HEIGHT/tex_height),
 										0,
 										Vector2(CANVAS_ORIGIN.x+i*CELL_WIDTH, CANVAS_ORIGIN.y+j*CELL_HEIGHT))
 			add_child(cell)
+
+#func on_cell_clicked(x : int, y: int):
+#	cell_clicked.emit()
 
 func get_cell(x : int, y : int):
 	if x < 0 or x > WIDTH-1 or y < 0 or y > HEIGHT-1:

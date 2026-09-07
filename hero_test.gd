@@ -6,8 +6,8 @@ extends Sprite2D
 var hor_speed = 5
 var vert_speed = 5
 
-var x : int = 5
-var y : int = 5
+var x : int = 2
+var y : int = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

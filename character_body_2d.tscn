@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dtohk0w1nvm2d"]
 
 [ext_resource type="Script" uid="uid://bndti3al305d4" path="res://character_body_2d.gd" id="1_ghijl"]
-[ext_resource type="Texture2D" uid="uid://0y4484wldl7n" path="res://кш4а спрайты для образца.png" id="1_ij6vw"]
-[ext_resource type="Texture2D" uid="uid://de664f8a5njby" path="res://кш4а спрайты.png" id="2_ghijl"]
+[ext_resource type="Texture2D" uid="uid://0y4484wldl7n" path="res://sprites/кш4а спрайты для образца.png" id="1_ij6vw"]
+[ext_resource type="Texture2D" uid="uid://de664f8a5njby" path="res://sprites/кш4а спрайты.png" id="2_ghijl"]
 [ext_resource type="AnimationLibrary" uid="uid://c0e3ehks4uotm" path="res://base_animations.res" id="4_44cfe"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_ghijl"]
@@ -9201,6 +9201,7 @@ texture = ExtResource("1_ij6vw")
 [node name="FlipTimer" type="Timer" parent="." unique_id=503170505]
 
 [node name="Rig" type="Node2D" parent="." unique_id=136661531]
+texture_filter = 3
 position = Vector2(74, 309)
 
 [node name="Polygons" type="Node2D" parent="Rig" unique_id=1478638580]
@@ -9657,7 +9658,7 @@ rotation = 1.6388896
 rest = Transform2D(-0.06804062, 0.9976826, -0.9976826, -0.06804062, -47, -28)
 auto_calculate_length_and_angle = false
 length = 49.040802
-bone_angle = -14.2389965
+bone_angle = -14.238991
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone2D" type="Bone2D" parent="Rig/Skeleton2D/Body/Neck/Head/SidelockRight" unique_id=1141825376]
@@ -9683,7 +9684,7 @@ position = Vector2(-2, 51)
 rest = Transform2D(1, 0, 0, 1, -2, 51)
 auto_calculate_length_and_angle = false
 length = 39.921
-bone_angle = 106.99996
+bone_angle = 106.99993
 metadata/_local_pose_override_enabled_ = true
 
 [node name="CatEarRight" type="Bone2D" parent="Rig/Skeleton2D/Body/Neck/Head" unique_id=205951623]
@@ -9820,13 +9821,13 @@ bone_angle = 0.0
 [node name="ThighLeft" type="Bone2D" parent="Rig/Skeleton2D/Body" unique_id=1537738237]
 position = Vector2(22, 145.99817)
 rotation = -0.007254944
-scale = Vector2(0.9998942, 0.9998942)
+scale = Vector2(0.99989396, 0.99989396)
 rest = Transform2D(0.9998689, -0.0072541204, 0.0072541204, 0.9998689, 22, 145.99817)
 
 [node name="LegLeft" type="Bone2D" parent="Rig/Skeleton2D/Body/ThighLeft" unique_id=1423402584]
 position = Vector2(-2.9989586, 125.04245)
 rotation = 0.01628859
-scale = Vector2(0.99991506, 0.99991506)
+scale = Vector2(0.9999148, 0.9999148)
 rest = Transform2D(0.99978346, 0.016286504, -0.016286504, 0.99978346, -2.9989586, 125.04245)
 
 [node name="FootLeft" type="Bone2D" parent="Rig/Skeleton2D/Body/ThighLeft/LegLeft" unique_id=806257966]

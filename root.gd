@@ -1,16 +1,17 @@
-extends Node2D
+extends Room
 
-var Character = preload("res://character_body_2d.tscn")
-var instance : CharacterBody2D
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	instance = Character.instantiate()
-	instance.position = $Marker2D.position
-	add_child(instance)
-	
+	var character = load("res://character_body_2d.tscn").instantiate()
+	character.position = $Marker2D.position
+	add_child(character)
 
+	var smth = Hero.new()
+	var sprite = character.rig.duplicate()
+	#sprite.texture = preload("res://sprites/hero.png")
+	smth.set_sprite(sprite, 0.38, Vector2(0, -114))
+	spawn(smth, 0, 0)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	ui = $UI
+	connect_ui()

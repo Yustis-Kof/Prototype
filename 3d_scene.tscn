@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1c3nxcp23gcp" path="res://3d_field.gd" id="1_35hqx"]
 [ext_resource type="Script" uid="uid://bn4k6i7jposb2" path="res://camera_3d.gd" id="1_428tv"]
-[ext_resource type="Texture2D" uid="uid://dcb51san8yhnj" path="res://icon.svg" id="2_kk6fc"]
+[ext_resource type="Texture2D" uid="uid://dcb51san8yhnj" path="res://sprites/icon.svg" id="2_kk6fc"]
 
 [node name="3DScene" type="Node3D" unique_id=1089649525]
 
@@ -14,6 +14,3 @@ script = ExtResource("1_428tv")
 [node name="Field" type="Node3D" parent="." unique_id=129533005]
 script = ExtResource("1_35hqx")
 cell_texture = ExtResource("2_kk6fc")
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1691100297]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)

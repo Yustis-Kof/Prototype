@@ -11,12 +11,15 @@ void vertex() {
 
 void fragment() {
 	
+	if (start) {
 	float current_radius = clamp(TIME*speed, 0.0, 1.0)*radius;
 	
 	vec2 centered = UV*2.0 - vec2(1.0, 1.0);
 	float sum = pow(centered.x, 2) + pow(centered.y, 2);
-	if (current_radius-thickness < sum && sum < current_radius+thickness)
-		COLOR = vec4(1, 1, 0, 1);
+	
+		if (current_radius-thickness < sum && sum < current_radius+thickness)
+			COLOR = vec4(1, 1, 0, 1);
+	}
 }
 
 void process() {

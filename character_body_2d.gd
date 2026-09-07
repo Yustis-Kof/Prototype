@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var animation_player = $AnimationPlayer
+@onready var rig = $Rig
 
 const SPEED = 240
 const JUMP_VELOCITY = -600.0
@@ -44,16 +45,16 @@ func _physics_process(delta: float) -> void:
 	elif velocity.y > 0:
 		start_animation("fall", 0.5)
 	elif velocity.x:
-		animation_player.play("walk", 1)
+		start_animation("walk", 1)
 		animation_player.speed_scale = abs(velocity.x/WALK_ANIMATION_BASIC_SPEED)
-	else:
+	elif not animation_player.current_animation.begins_with("idle"):
 		start_animation("rest", 0.5)
 		
 	if Input.is_action_just_pressed("ui_down"):
 		start_animation("rest", 1)
 	
 	if randi_range(1, 1000) == 1:
-		animation_player.play("idle_1", 1)
+		start_animation("idle_1", 1)
 
 	move_and_slide()
 
