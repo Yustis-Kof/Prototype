@@ -11,7 +11,7 @@ func _ready() -> void:
 	var sprite = character.rig.duplicate()
 	#sprite.texture = preload("res://sprites/hero.png")
 	smth.set_sprite(sprite, 0.38, Vector2(0, -114))
-	spawn(smth, 0, 0)
+	spawn(smth, 4, 4)
 
 	ui = $Camera2D/UI
 	connect_ui()

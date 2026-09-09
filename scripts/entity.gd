@@ -9,8 +9,23 @@ extends Node2D
 		y = value.y
 @export var sprite : Node2D
 
+enum FacingDirection {
+	Right,
+	Down,
+	Left,
+	Up
+}
+
+enum MovementType {
+	Dash,	# Рывок
+	Path,	# Перемещение по соседним клеткам по наикратчайшему пути
+	Jump,
+	Teleport,
+}
+
 var x : int
 var y : int
+var facing : FacingDirection
 
 signal movement_ended
 

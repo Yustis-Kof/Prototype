@@ -41,6 +41,7 @@ func get_cell(x : int, y : int):
 	var children = get_children()
 	return children[WIDTH * x + y]
 
+
 func _process(delta: float) -> void:
 	count += PI * current_animation_speed * delta
 	skew = CANVAS_SKEW + sin(count) * 0.05
