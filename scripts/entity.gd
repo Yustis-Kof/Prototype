@@ -19,8 +19,11 @@ enum FacingDirection {
 
 var x : int
 var y : int
+var speed : float
 var facing : FacingDirection
+var current_movement_type : Movement.MovementType
 
+signal movement_started
 signal movement_ended
 
 func _ready() -> void:
@@ -40,7 +43,7 @@ func set_sprite(_sprite: Node2D, _scale: float = 1.0, offset : Vector2 = Vector2
 
 func _process(delta: float) -> void:
 	if current_cell:
-		position.x += (current_cell.global_position.x - position.x)/2
-		position.y += (current_cell.global_position.y - position.y)/2
+		position.x += (current_cell.global_position.x - position.x)/4
+		position.y += (current_cell.global_position.y - position.y)/4
 		if abs(position - current_cell.global_position) < Vector2.ONE:
 			movement_ended.emit()

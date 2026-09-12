@@ -62,11 +62,11 @@ func next_turn() -> void:
 		move.room = self
 		var dir = Direction.ALL.pick_random()
 		move.append_character(StraightPattern.new(dir))
-		move.append_character(ConstantDistance.new(1))
+		move.append_character(ConstantDistance.new(randi_range(1,3)))
 		if randi_range(1, 3) == 3:
 			dir = Direction.ALL.pick_random()
 			move.append_character(StarPattern.new(0b11111111))
-			move.append_character(ConstantDistance.new(1))
+			move.append_character(ConstantDistance.new(randi_range(1,3)))
 		deck.append_move(move)
 		
 		ui.show_move_deck(deck)
@@ -106,7 +106,6 @@ func on_move_selected(move : Move, deck : MoveDeck):
 	move.execute_next_character()
 
 func on_cell_clicked(cell: Cell):
-	print("pepsi")
 	if state != States.AwaitingCellSelect:
 		return
 	if cell not in selectable_cells:

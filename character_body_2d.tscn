@@ -9658,7 +9658,7 @@ rotation = 1.6388896
 rest = Transform2D(-0.06804062, 0.9976826, -0.9976826, -0.06804062, -47, -28)
 auto_calculate_length_and_angle = false
 length = 49.040802
-bone_angle = -14.238991
+bone_angle = -14.23899
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone2D" type="Bone2D" parent="Rig/Skeleton2D/Body/Neck/Head/SidelockRight" unique_id=1141825376]
@@ -9821,13 +9821,13 @@ bone_angle = 0.0
 [node name="ThighLeft" type="Bone2D" parent="Rig/Skeleton2D/Body" unique_id=1537738237]
 position = Vector2(22, 145.99817)
 rotation = -0.007254944
-scale = Vector2(0.9998939, 0.9998939)
+scale = Vector2(0.9998926, 0.9998926)
 rest = Transform2D(0.9998689, -0.0072541204, 0.0072541204, 0.9998689, 22, 145.99817)
 
 [node name="LegLeft" type="Bone2D" parent="Rig/Skeleton2D/Body/ThighLeft" unique_id=1423402584]
 position = Vector2(-2.9989586, 125.04245)
 rotation = 0.01628859
-scale = Vector2(0.99991477, 0.99991477)
+scale = Vector2(0.99991345, 0.99991345)
 rest = Transform2D(0.99978346, 0.016286504, -0.016286504, 0.99978346, -2.9989586, 125.04245)
 
 [node name="FootLeft" type="Bone2D" parent="Rig/Skeleton2D/Body/ThighLeft/LegLeft" unique_id=806257966]
@@ -9928,7 +9928,7 @@ position = Vector2(44, -211)
 libraries/ = SubResource("AnimationLibrary_lhvu3")
 libraries/base_animations = ExtResource("4_44cfe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1446520294]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1446520294]
 visible = false
 position = Vector2(73.875, 309)
 shape = SubResource("RectangleShape2D_4kxuq")

@@ -8,9 +8,9 @@ func _ready() -> void:
 	add_child(character)
 
 	var smth = Hero.new()
-	var sprite = character.rig.duplicate()
+	var sprite = load("res://catgirl_body.tscn").instantiate()
 	#sprite.texture = preload("res://sprites/hero.png")
-	smth.set_sprite(sprite, 0.38, Vector2(0, -114))
+	smth.set_sprite(sprite, 0.38)
 	spawn(smth, 4, 4)
 
 	ui = $Camera2D/UI
