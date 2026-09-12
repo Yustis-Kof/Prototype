@@ -9,6 +9,7 @@
 [ext_resource type="Shader" uid="uid://c6mir2djr0ciw" path="res://shaders/circle.gdshader" id="5_bf3um"]
 [ext_resource type="Script" uid="uid://do81ka2qk1csd" path="res://hero_test.gd" id="5_jnlp7"]
 [ext_resource type="Script" uid="uid://bk467rerjboq6" path="res://scripts/fight_ui.gd" id="9_huihk"]
+[ext_resource type="Theme" uid="uid://bfcnh4qgf1l6v" path="res://theme.tres" id="10_tw3kd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_huihk"]
 
@@ -189,13 +190,15 @@ offset_left = -948.0
 offset_top = 474.0
 offset_right = -766.0
 offset_bottom = 526.0
+theme = ExtResource("10_tw3kd")
 text = "Начать битво!!!!"
 
 [node name="EndTurnButton" type="Button" parent="Camera2D/UI" unique_id=195293155]
-offset_left = 760.0
+offset_left = 701.0
 offset_top = 477.0
-offset_right = 946.0
-offset_bottom = 529.0
+offset_right = 948.0
+offset_bottom = 530.0
+theme = ExtResource("10_tw3kd")
 text = "Закончить ход"
 
 [node name="TurnTitle" type="Label" parent="Camera2D/UI" unique_id=2064752337]
@@ -203,16 +206,19 @@ offset_left = -17.0
 offset_top = -522.0
 offset_right = 23.0
 offset_bottom = -499.0
+theme = ExtResource("10_tw3kd")
 
 [node name="FightTitle" type="Label" parent="Camera2D/UI" unique_id=1843871411]
 offset_left = -25.0
 offset_top = -136.0
 offset_right = 25.0
 offset_bottom = -113.0
+theme = ExtResource("10_tw3kd")
 
 [node name="DeckContainer" type="BoxContainer" parent="Camera2D/UI" unique_id=962338504]
 offset_left = 587.0
 offset_top = -358.0
 offset_right = 941.0
 offset_bottom = 184.0
+theme = ExtResource("10_tw3kd")
 vertical = true

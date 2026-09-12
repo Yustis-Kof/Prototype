@@ -14,7 +14,13 @@ var hitbox : CollisionShape2D = CollisionShape2D.new()
 var x : int
 var y : int
 
-var selectable : bool = false
+enum HighlightMode {
+	None,
+	Selectable,
+	Path
+}
+
+var highlight_mode
 
 func _ready() -> void:
 	sprite.material = ShaderMaterial.new()
@@ -32,19 +38,23 @@ func _ready() -> void:
 func highlight() -> void:
 	## Подсветить клетку
 	sprite.material.set_shader_parameter("start", true)
-	sprite.material.set_shader_parameter("radius", 0.3)
+	if highlight_mode == HighlightMode.Selectable:
+		sprite.material.set_shader_parameter("radius", 0.5)
+	elif highlight_mode == HighlightMode.Path:
+		sprite.material.set_shader_parameter("radius", 0.2)
 
 func unhighlight() -> void:
 	## Сбросить подсветку
+	highlight_mode = null
 	sprite.material.set_shader_parameter("start", false)
 	sprite.material.set_shader_parameter("radius", 0.0)
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == 1:
-		field.cell_clicked.emit(self)	# Надеюсь, мне не аукнется то, что я соединяю это не через сигнал
 		if event.pressed:
 			sprite.material.set_shader_parameter("start", true)
-		else:
+			field.cell_clicked.emit(self)
+		elif not highlight_mode:
 			sprite.material.set_shader_parameter("start", false)
 	
 
@@ -53,12 +63,12 @@ func _on_mouse_entered() -> void:
 	#sprite.material.set_shader_parameter("radius", 0.5)
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		sprite.material.set_shader_parameter("start", true)
-	if selectable:
+	if highlight_mode == HighlightMode.Selectable:
 		modulate.a = 0.1
 
 func _on_mouse_exited() -> void:
 	#sprite.material.set_shader_parameter("radius", 0.0)
-	if not selectable:
+	if not highlight_mode:
 		sprite.material.set_shader_parameter("start", false)
 	modulate.a = 1
 

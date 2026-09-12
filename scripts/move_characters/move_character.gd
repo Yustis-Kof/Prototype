@@ -4,5 +4,6 @@ extends Node
 
 var symbol : String:
 	get = get_symbol
+var move : Move
 
 @abstract func get_symbol()

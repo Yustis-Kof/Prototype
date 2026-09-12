@@ -41,6 +41,17 @@ func get_cell(x : int, y : int):
 	var children = get_children()
 	return children[WIDTH * x + y]
 
+func highlight_path(path : Array[Movement]) -> void:
+	for cell in get_children():
+		if cell.highlight_mode == Cell.HighlightMode.Path:
+			cell.unhighlight()
+	for movement in path:
+		movement.to.highlight_mode = Cell.HighlightMode.Path
+		movement.to.highlight()
+
+func unhighlight_all() -> void:
+	for cell in get_children():
+		cell.unhighlight()
 
 func _process(delta: float) -> void:
 	count += PI * current_animation_speed * delta

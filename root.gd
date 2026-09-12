@@ -16,3 +16,6 @@ func _ready() -> void:
 	ui = $Camera2D/UI
 	connect_ui()
 	connect_field()
+	
+	var test = StarPattern.new(0b00010101)
+	print(test.directions)

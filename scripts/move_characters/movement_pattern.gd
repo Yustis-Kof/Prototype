@@ -4,7 +4,7 @@ extends MoveCharacter
 
 var unit : Unit
 var room : Room
-var default_movement_type : Entity.MovementType
+var default_movement_type : Movement.MovementType
 
 func get_cells(min_distance : int, max_distance : int, facing : Entity.FacingDirection) -> Array[Vector2i]:
 	## Получить массив относительных координат паттерна

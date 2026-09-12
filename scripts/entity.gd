@@ -16,12 +16,6 @@ enum FacingDirection {
 	Up
 }
 
-enum MovementType {
-	Dash,	# Рывок
-	Path,	# Перемещение по соседним клеткам по наикратчайшему пути
-	Jump,
-	Teleport,
-}
 
 var x : int
 var y : int
